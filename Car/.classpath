@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/laurecompoint/Desktop/WebStart/Webstart_3annee/Mobile_Java/Car/jansi-1.18.jar">
+	<classpathentry kind="lib" path="/Users/laurecompoint/Desktop/WebStart/Webstart_3annee/Mobile_Java/java-race-car-laurecompoint/Car/jansi-1.18.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
