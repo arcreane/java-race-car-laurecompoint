@@ -53,7 +53,7 @@ public class Car{
 		 System.out.println("Veuillez écrire le nom de votre voiture ( modèle de voiture )");
 		 Name = scan.next();
 		 System.out.println("La marque de votre voiture est : " + Name);
-		 System.out.println("Maintenant, vous pouvez choisir la couleur de votre voiture, soit Bleu (tape 1), soit jaune (tape 2), soit rouge (tape 3)");
+		 System.out.println("Maintenant, vous pouvez choisir la couleur de votre voiture "+ Name + " , soit Bleu (tape 1), soit jaune (tape 2), soit rouge (tape 3)");
 		 
 		 while( scan.hasNextInt() == false ) {
 			 System.out.println("Choisie un nombre entre 1 , 2 et 3 pour corespondre au couleur");
@@ -63,17 +63,17 @@ public class Car{
 		 switch(answer) {
 		  case 1:
 			  Color = "BLUE";
-			  System.out.println( ansi().eraseScreen().fg(BLUE).a("La couleur de votre voiture est : " + Color).reset() );
+			  System.out.println( ansi().eraseScreen().fg(BLUE).a("La couleur de votre voiture "+ Name + " est : " + Color).reset() );
 			 
 		    break;
 		  case 2:
 			  Color = "YELLOW";
-			  System.out.println( ansi().eraseScreen().fg(YELLOW).a("La couleur de votre voiture est : " + Color).reset() );
+			  System.out.println( ansi().eraseScreen().fg(YELLOW).a("La couleur de votre voiture "+ Name + "est : " + Color).reset() );
 			  break;
 			  
 		  case 3:
 			  Color = "RED";
-			  System.out.println( ansi().eraseScreen().fg(RED).a("La couleur de votre voiture est : " + Color).reset() );
+			  System.out.println( ansi().eraseScreen().fg(RED).a("La couleur de votre voiture "+ Name + "est : " + Color).reset() );
 			  break;
 		  default:
 			   
@@ -97,7 +97,7 @@ public class Car{
 		
 		 System.out.println();
          if(Speed > 60) {
-        	 System.out.println("Votre voiture de couleur à une vitesse de "  + Speed + "  et une puissance de " + Power );
+        	 System.out.println("Votre voiture "+ Name + " , de couleur à une vitesse de "  + Speed + "  et une puissance de " + Power );
         	 Frein = "frein";
         	 Volant = "volant";
 			 Retro = "retro";
@@ -108,7 +108,7 @@ public class Car{
 			
 			
 			 
-			 System.out.println("Attention votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
+			 System.out.println("Attention votre voiture "+ Name + " , avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
 			
 			
 			
@@ -148,7 +148,7 @@ public class Car{
 				 }
 				 else {
 					 System.out.println("Vous n'avez pas reussi à reparer la piece dans le Temps impartie, vous avez mis " + time + " seconde a reparer votre piece");
-					  System.out.println(ansi().eraseScreen().fg(RED).a("Votre voiture ne parvient pas a finir la course a cause de la piece manquante " + piecelost));
+					  System.out.println(ansi().eraseScreen().fg(RED).a("Votre voiture "+ Name + " ne parvient pas a finir la course a cause de la piece manquante " + piecelost));
 				 }
 				
 				
@@ -160,8 +160,8 @@ public class Car{
 			 
 		 }
          else {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "Et n'a pas perdu de piece" );
-			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture a fini sont parcoure apres 50 km, fin du jeu"));
+			 System.out.println("Votre voiture "+ Name + " à une vitesse de "  + Speed + "  et une puissance de " + Power + "Et n'a pas perdu de piece" );
+			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture à fini sont parcoure apres 50 km, fin du jeu"));
 		 }
 		
 	}
@@ -177,8 +177,8 @@ public class Car{
 		
 		
          if(Speed < 60) {
-        	 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power);
-    		 System.out.println("Votre voiture avance doucement, vous avec le droit a un boost de vitesse...");
+        	 System.out.println("Votre voiture "+ Name + " à une vitesse de "  + Speed + "  et une puissance de " + Power);
+    		 System.out.println("Votre voiture  "+ Name + " avance doucement, vous avec le droit a un boost de vitesse...");
     		 System.out.println("Pour que le boost s'active, entreer les lettres du mot dans le meme ordre qui va apparaitre en moin de 3 seconde.");
     		
    	
@@ -217,7 +217,7 @@ public class Car{
 					 } 
 			  }
 			  else {
-				  System.out.println("Votre voiture n'as pas eu de boost de vitesse");
+				  System.out.println("Votre voiture "+ Name + " n'as pas eu de boost de vitesse");
 			  }
 			
 			
@@ -226,7 +226,7 @@ public class Car{
 			
 		 }
          else {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas besoins d'avoir un boost de vitesse" );
+			 System.out.println("Votre voiture "+ Name + " à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas besoins d'avoir un boost de vitesse" );
 		 }
         
 	}
