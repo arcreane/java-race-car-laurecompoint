@@ -8,8 +8,8 @@ public class CarSlow extends Car {
 		
 	}
 	
-	CarSlow(int id, String color, int speed, String power, String name, Motor moteur, Wheels[] arraywheels,  String volant, String frein) {
-		super(id, power, color, speed, name, moteur, arraywheels, volant, frein);
+	CarSlow(int id, String color, int speed, String power, String name, Motor moteur, String wheels[],  String volant, String frein) {
+		super(id, power, color, speed, name, moteur, wheels, volant, frein);
 	
 	}
 

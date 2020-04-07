@@ -16,8 +16,8 @@ public class CarFast extends Car {
 		
 	}
 	
-	CarFast(int id, String name, String color, int speed, String power, Motor moteur, Wheels[] arraywheels,  String volant, String frein) {
-		super(id, name, color, speed, power,  moteur, arraywheels, volant, frein);
+	CarFast(int id, String name, String color, int speed, String power, Motor moteur, String wheels[],  String volant, String frein) {
+		super(id, name, color, speed, power,  moteur, wheels, volant, frein);
 	
 	}
 
