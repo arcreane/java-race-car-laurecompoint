@@ -159,31 +159,27 @@ public class Car{
 			
 			 
 		 }
-         while(Speed < 60) {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power );
+         else {
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "Et n'a pas perdu de piece" );
+			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture a fini sont parcoure apres 50 km, fin du jeu"));
 		 }
 		
 	}
 	public void SpeedCarSlow() {
-		Speed = scan.nextInt();
+		
 		Power = "faible puissance";
 		
 	
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power);
-	
-         if(Speed > 60) {
-        	 
-        	
-    			 System.out.println("Votre voiture avance normalement, pas de boost de vitesse");
-    			 System.out.println("La voiture a fini sont parcoure apres 50 km, fin du jeu");
-    		
-  
-			 
-		 }
-		 else {
-			
+
+		 int[] speedcar = { 30, 40, 55, 65, 70, 61, 64};
+		 Random r3 = new Random();
+		 Speed = speedcar[r3.nextInt(speedcar.length)];
+		
+		
+         if(Speed < 60) {
+        	 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power);
     		 System.out.println("Votre voiture avance doucement, vous avec le droit a un boost de vitesse...");
-    		 System.out.println("Pour que le boost s'active, entreer les lettres du mot dans le meme ordre qui va apparaitre.");
+    		 System.out.println("Pour que le boost s'active, entreer les lettres du mot dans le meme ordre qui va apparaitre en moin de 3 seconde.");
     		
    	
 			 Random rand = new Random();
@@ -229,6 +225,10 @@ public class Car{
 			 
 			
 		 }
+         else {
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas besoins d'avoir un boost de vitesse" );
+		 }
+        
 	}
 	}
 
