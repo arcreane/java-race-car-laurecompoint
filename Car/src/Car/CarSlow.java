@@ -1,7 +1,7 @@
 package Car;
 
 import Motor.Motor;
-import Wheels.Wheels;
+
 
 public class CarSlow extends Car {
 	CarSlow(){
