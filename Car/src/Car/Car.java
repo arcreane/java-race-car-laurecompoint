@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 import Motor.Motor;
 import Motor.MotorRapide;
-import Wheels.Wheels;
+
 
 public class Car{
 	int Id;
@@ -87,25 +87,28 @@ public class Car{
 	
 	protected void SpeedCarFast() {
 		
-		Speed = scan.nextInt();
-		Power = "faible puissance";
 		
+		Power = "super puissance";
 		
-		System.out.println("Votre voiture de couleur  à une vitesse de "  + Speed + "  et une puissance de " + Power );
+		 int[] speedcar = { 40, 50, 60, 70, 80, 90, 100 };
+		 Random r1 = new Random();
+		 Speed = speedcar[r1.nextInt(speedcar.length)];
+		
 		
 		 System.out.println();
          if(Speed > 60) {
+        	 System.out.println("Votre voiture de couleur à une vitesse de "  + Speed + "  et une puissance de " + Power );
         	 Frein = "frein";
         	 Volant = "volant";
-			Retro = "retro";
+			 Retro = "retro";
 			
 			 String[] tab = {Frein, Volant, Retro, Wheels[0],Wheels[1],Wheels[2], Wheels[3] };
-			 Random r = new Random();
-			 String piecelost = tab[r.nextInt(tab.length)];
+			 Random r2 = new Random();
+			 String piecelost = tab[r2.nextInt(tab.length)];
 			
 			
 			 
-			 System.out.println("Votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
+			 System.out.println("Attention votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
 			
 			
 			
@@ -156,11 +159,10 @@ public class Car{
 			
 			 
 		 }
-		 else {
-			 System.out.println(ansi().eraseScreen().fg(GREEN).a("Votre voiture avance normalement, tout va pour le mieux"));
-			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture a fini sont parcoure apres 50 km, fin du jeu"));
-			
+         while(Speed < 60) {
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power );
 		 }
+		
 	}
 	public void SpeedCarSlow() {
 		Speed = scan.nextInt();
