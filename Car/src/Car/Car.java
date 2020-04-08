@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 
 import Motor.Motor;
-import Motor.MotorRapide;
+
 
 
 public class Car{
@@ -21,7 +21,6 @@ public class Car{
 	String Name;
 	String Color;
 	int Speed;
-	String Power;
 	Motor Moteur;
 	Scanner scan = new Scanner(System.in);
 	String Wheels[] = {"roue1", "roue2", "roue3", "roue4"};
@@ -35,21 +34,19 @@ public class Car{
 	}
 	
 	
-	Car(int id, String name, String color, int speed, String power,  Motor moteur, String wheels[] ,  String volant, String frein ) {
+	Car(int id, String name, String color, int speed, Motor moteur, String wheels[] ,  String volant, String frein ) {
 		Name = name;
 		Color = color;
 		Speed = speed;
-		Power = power;
 		Id = id;
 		Motor Moteur = moteur;
 		String Wheels[]  =  {"roue1", "roue2", "roue3", "roue4"};
 		Volant = volant;
 		Frein = frein;
-		
-		
 				
 	}
 	public void FillCarInfo(){
+		
 		 System.out.println("Veuillez écrire le nom de votre voiture ( modèle de voiture )");
 		 Name = scan.next();
 		 System.out.println("La marque de votre voiture est : " + Name);
@@ -88,8 +85,6 @@ public class Car{
 	protected void SpeedCarFast() {
 		
 		
-		Power = "super puissance";
-		
 		 int[] speedcar = { 40, 50, 60, 70, 80, 90, 100 };
 		 Random r1 = new Random();
 		 Speed = speedcar[r1.nextInt(speedcar.length)];
@@ -97,12 +92,12 @@ public class Car{
 		 
 		
 		 while(Speed <= 60) {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas encore perdu de piece");
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "et n'a pas encore perdu de piece");
 			 Speed++;
 		 }
 		 System.out.println();
          if(Speed >= 60) {
-        	 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power );
+        	 System.out.println("Votre voiture à une vitesse de "  + Speed  );
         	 Frein = "frein";
         	 Volant = "volant";
 			 Retro = "retro";
@@ -155,27 +150,23 @@ public class Car{
 			 
 		 }
          else {
-			 System.out.println("Votre voiture  à une vitesse de "  + Speed + "  et une puissance de " + Power + "Et n'a pas perdu de piece" );
+			 System.out.println("Votre voiture  à une vitesse de "  + Speed + "Et n'a pas perdu de piece" );
 			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture à fini sont parcoure apres 50 km, fin du jeu"));
 		 }
 		
 	}
 	public void SpeedCarSlow() {
 		
-		Power = "faible puissance";
-		
-	
-
 		 int[] speedcar = { 30, 28, 20, 6, 9, 5, 25};
 		 Random r3 = new Random();
 		 Speed = speedcar[r3.nextInt(speedcar.length)];
 		
 		 while(Speed <= 20) {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas encore le droit d'avoir un boost de vitesse" );
+			 System.out.println("Votre voiture à une vitesse de "  + Speed +  "et n'a pas encore le droit d'avoir un boost de vitesse" );
 			 Speed++;
 		 }
          if(Speed <= 30) {
-        	 System.out.println("Votre voiture  à une vitesse de "  + Speed + "  et une puissance de " + Power);
+        	 System.out.println("Votre voiture  à une vitesse de "  + Speed );
     		 System.out.println("Votre voiture   avance doucement, vous avez le droit à un boost de vitesse...");
     		 System.out.println("Pour que le boost s'active, entrer les lettres du mot dans le même ordre qui va apparaitre en moins de 3 secondes.");
     		
@@ -224,7 +215,7 @@ public class Car{
 			
 		 }
          else {
-			 System.out.println("Votre voiture  à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas besoins d'avoir un boost de vitesse" );
+			 System.out.println("Votre voiture  à une vitesse de "  + Speed  + "et n'a pas besoins d'avoir un boost de vitesse" );
 		 }
         
 	}
