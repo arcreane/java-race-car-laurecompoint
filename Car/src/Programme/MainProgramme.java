@@ -45,7 +45,7 @@ public class MainProgramme {
 			 long timestartracefast = System.currentTimeMillis();
 			 car.add(CarFast.createcarfast());
 			 motor.add(MotorRapide.motorrapide());
-			 System.out.println("Vous voiture commence a roulez avec une certain vitesse");
+			 System.out.println("Vous voiture commence a roulez avec une certain vitesse :");
 			 System.out.println("Attention, vous avez 60% de chance de perdre des pieces pendant la courses.");
 			 car.add(CarFast.speedpower());
 			 long timeendracefast = System.currentTimeMillis();
@@ -59,7 +59,7 @@ public class MainProgramme {
 			  long timestartraceslow = System.currentTimeMillis();
 			  car.add(CarSlow.createcarslow());
 			  motor.add(MotorSlow.motorslow());
-			  System.out.println("Vous voiture commence a roulez avec une certain vitesse, choisisez la vitesse de votre voiture ?");
+			  System.out.println("Vous voiture commence a roulez avec une certain vitesse :");
 			  System.out.println("Attention, avec avez 30% de chance d'essayer d'avoir un boost de vitesse pour vous aider pendant la courses");
 			  car.add(CarSlow.speedpower());
 			  long timeendraceslow = System.currentTimeMillis();
