@@ -104,17 +104,16 @@ public class Car{
 			 
 			 System.out.println("Votre voiture avance rapidement, attention vous risquer de perdre des pièces en routes!!!");
 			
-			 char reponse = 'O';
+			 char reponse = ' ';
 			 char reponsetemps = 'O';
+				Scanner sc = new Scanner(System.in);
 			
-			 while (reponse == 'O') {
+			
 				 String[] tab = {Frein, Volant, Retro, Wheels[0],Wheels[1],Wheels[2], Wheels[3] };
 				 Random r2 = new Random();
 				 String piecelost = tab[r2.nextInt(tab.length)];
-				
 				 System.out.println("Vous venez de perdre une pièce : " + piecelost );
 				 System.out.println("Taper dans la console le nom de la pièce a reparé en moins de 6 secondes pour reussir à la réparer");
-				
 				 long timestart = System.currentTimeMillis();
 				 String piece = scan.next();
 				 System.out.println(piece);
@@ -125,33 +124,34 @@ public class Car{
 				 if(time <  6 ){
 					 if(piece.equals(piecelost)) {
 						 System.out.println("Vous avez reparer la pièce dans le Temps impartie, vous avez mis   " + time + "  seconde a reparer votre piece") ;
-						 System.out.println(ansi().eraseScreen().fg(GREEN).a("La pièce est désormais réparée"));
+						 System.out.println("La pièce est désormais réparée");
 						
 					 }
 					 else {
 						
 						 System.out.println("Piece toujour manquante...");
-						
+						reponse = 'O';
 					 }
 					
 					
 				 }
 				 else {
 					 System.out.println("Vous n'avez pas réussi à réparer la pièce dans le Temps imparti, vous avez mis " + time + " seconde à reparer votre piece");
-					  System.out.println(ansi().eraseScreen().fg(RED).a("Votre voiture  ne parvient pas à finir la course à cause de la piece manquante " + piecelost));
+					  System.out.println("Votre voiture  ne parvient pas à finir la course à cause de la piece manquante " + piecelost);
+					 reponse = 'O';
 				 }
 				
 				
 				
 				 
-			 }
+			 
 		
 			
 			 
 		 }
          else {
 			 System.out.println("Votre voiture  à une vitesse de "  + Speed + "Et n'a pas perdu de piece" );
-			 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture à fini sont parcoure apres 50 km, fin du jeu"));
+			 System.out.println("La voiture à fini sont parcoure apres 50 km, fin du jeu");
 		 }
 		
 	}
