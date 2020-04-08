@@ -31,12 +31,14 @@ public class MainProgramme {
 		
 		
 		 user.add(Personne.createuser());
-		
+		 char reponserestart = ' ';
+		 Scanner sc = new Scanner(System.in);
+		 do{
 		System.out.println("Choisie le type de voiture : type 1 pour voiture rapide et type 2 pour voiture lent");
-		while( scan.hasNextInt() == false ) {
-			System.out.println("Choisie un nombre entre 1 et 2");
-			scan.next();
-		}	
+			while( scan.hasNextInt() == false ) {
+				System.out.println("Choisie un nombre entre 1 et 2");
+				scan.next();
+			}	
 		 int answer = scan.nextInt();
 		 switch(answer) {
 		  case 1:
@@ -76,6 +78,13 @@ public class MainProgramme {
 			   
 			 
 			}
+		 
+		     do{
+			    System.out.println("Voulez-vous réessayer de refaire une course ? (O/N)");
+			    reponserestart = sc.nextLine().charAt(0);
+			  }while(reponserestart != 'O' && reponserestart != 'N');
+		 
+		 }while (reponserestart == 'O');
 		
 	}
 
