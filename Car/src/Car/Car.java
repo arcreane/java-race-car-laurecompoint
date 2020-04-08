@@ -21,7 +21,7 @@ public class Car{
 	String Name;
 	String Color;
 	int Speed;
-	Motor Moteur;
+	Motor Motor;
 	Scanner scan = new Scanner(System.in);
 	String Wheels[] = {"roue1", "roue2", "roue3", "roue4"};
 	String Volant;
@@ -34,12 +34,12 @@ public class Car{
 	}
 	
 	
-	Car(int id, String name, String color, int speed, Motor moteur, String wheels[] ,  String volant, String frein ) {
+	Car(int id, String name, int speed, String color, Motor motor, String wheels[] ,  String volant, String frein ) {
 		Name = name;
 		Color = color;
 		Speed = speed;
 		Id = id;
-		Motor Moteur = moteur;
+		Motor Motor = motor;
 		String Wheels[]  =  {"roue1", "roue2", "roue3", "roue4"};
 		Volant = volant;
 		Frein = frein;
