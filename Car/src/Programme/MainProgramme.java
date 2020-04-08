@@ -30,11 +30,11 @@ public class MainProgramme {
 		ArrayList<Motor> motor = new ArrayList<>();
 		
 		
-		 user.add(Personne.createuser());
-		 char reponserestart = ' ';
-		 Scanner sc = new Scanner(System.in);
+		user.add(Personne.createuser());
+		char reponserestart = ' ';
+		Scanner sc = new Scanner(System.in);
 		 do{
-		System.out.println("Choisie le type de voiture : type 1 pour voiture rapide et type 2 pour voiture lent");
+		    System.out.println("Choisie le type de voiture : type 1 pour voiture rapide et type 2 pour voiture lente");
 			while( scan.hasNextInt() == false ) {
 				System.out.println("Choisie un nombre entre 1 et 2");
 				scan.next();
@@ -42,13 +42,13 @@ public class MainProgramme {
 		 int answer = scan.nextInt();
 		 switch(answer) {
 		  case 1:
-			  System.out.println("Vous avez choisie une voiture rapide");
+			  System.out.println("Vous avez choisi une voiture rapide");
 			 
 			 long timestartracefast = System.currentTimeMillis();
 			 car.add(CarFast.createcarfast());
 			 motor.add(MotorRapide.motorrapide());
-			 System.out.println("Vous voiture commence a roulez avec une certain vitesse :");
-			 System.out.println("Attention, vous avez 60% de chance de perdre des pieces pendant la courses.");
+			 System.out.println("Votre voiture commence à rouler avec une certaine vitesse :");
+			 System.out.println("Attention, vous avez 60% de chance de perdre des pièces pendant la course.");
 			 car.add(CarFast.speedpower());
 			 long timeendracefast = System.currentTimeMillis();
 			 float timeracefast = (timeendracefast - timestartracefast) / 1000F;
@@ -61,8 +61,8 @@ public class MainProgramme {
 			  long timestartraceslow = System.currentTimeMillis();
 			  car.add(CarSlow.createcarslow());
 			  motor.add(MotorSlow.motorslow());
-			  System.out.println("Vous voiture commence a roulez avec une certain vitesse :");
-			  System.out.println("Attention, avec avez 30% de chance d'essayer d'avoir un boost de vitesse pour vous aider pendant la courses");
+			  System.out.println("Votre voiture commence à roulez avec une certain vitesse :");
+			  System.out.println("Attention, vous avez 30% de chance d'essayer d'avoir un boost de vitesse pour vous aider pendant la course");
 			  car.add(CarSlow.speedpower());
 			  long timeendraceslow = System.currentTimeMillis();
 			  float timeraceslow = (timeendraceslow - timestartraceslow) / 1000F;
