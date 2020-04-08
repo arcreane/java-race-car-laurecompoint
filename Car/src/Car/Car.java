@@ -93,10 +93,15 @@ public class Car{
 		 int[] speedcar = { 40, 50, 60, 70, 80, 90, 100 };
 		 Random r1 = new Random();
 		 Speed = speedcar[r1.nextInt(speedcar.length)];
+		 
+		 
 		
-		
+		 while(Speed <= 60) {
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas encore perdu de piece");
+			 Speed++;
+		 }
 		 System.out.println();
-         if(Speed > 60) {
+         if(Speed >= 60) {
         	 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power );
         	 Frein = "frein";
         	 Volant = "volant";
@@ -108,13 +113,13 @@ public class Car{
 			
 			
 			 
-			 System.out.println("Attention votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
+			 System.out.println("Votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
 			
 			
 			
 			 char reponse = 'O';
 			 char reponsetemps = 'O';
-			 Scanner sc = new Scanner(System.in);
+			
 			 while (reponse == 'O') {
 				 System.out.println("Vous venez de perdre une piece : " + piecelost );
 				 System.out.println("Taper dans la console le nom de la piece a reparer en moins de 3 seconds pour reussi à la réparer");
@@ -142,7 +147,7 @@ public class Car{
 					  {
 					   
 					    System.out.println(ansi().eraseScreen().fg(RED).a("Voulez-vous réessayer ? (O/N)"));
-					    reponse = sc.nextLine().charAt(0);
+					    reponse = '0';
 					   
 					  }
 				 }
@@ -171,12 +176,15 @@ public class Car{
 		
 	
 
-		 int[] speedcar = { 30, 40, 55, 65, 70, 61, 64};
+		 int[] speedcar = { 30, 28, 20, 6, 9, 5, 25};
 		 Random r3 = new Random();
 		 Speed = speedcar[r3.nextInt(speedcar.length)];
 		
-		
-         if(Speed < 60) {
+		 while(Speed <= 20) {
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et une puissance de " + Power + "et n'a pas encore le droit d'avoir un boost de vitesse" );
+			 Speed++;
+		 }
+         if(Speed <= 30) {
         	 System.out.println("Votre voiture  à une vitesse de "  + Speed + "  et une puissance de " + Power);
     		 System.out.println("Votre voiture   avance doucement, vous avec le droit a un boost de vitesse...");
     		 System.out.println("Pour que le boost s'active, entreer les lettres du mot dans le meme ordre qui va apparaitre en moin de 3 seconde.");
@@ -191,7 +199,7 @@ public class Car{
 			  
 				 motdesordre = alphabet.charAt(k)+"";
 			
-			   System.out.print(ansi().eraseScreen().fg(RED).a(motdesordre));
+			   System.out.print(motdesordre);
 			   
 				
 			  
@@ -217,7 +225,7 @@ public class Car{
 					 } 
 			  }
 			  else {
-				  System.out.println("Votre voiture "+ Name + " n'as pas eu de boost de vitesse");
+				  System.out.println("Votre voiture  n'as pas eu de boost de vitesse");
 			  }
 			
 			
