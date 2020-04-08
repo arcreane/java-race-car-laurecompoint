@@ -1,8 +1,8 @@
 package Car;
 
-import static org.fusesource.jansi.Ansi.ansi;
 
-import java.util.ArrayList;
+
+
 import java.util.Scanner;
 
 import Motor.Motor;
@@ -16,8 +16,8 @@ public class CarFast extends Car {
 		
 	}
 	
-	CarFast(int id, String name, String color, int speed, String power, Motor moteur, String wheels[],  String volant, String frein) {
-		super(id, name, color, speed, power,  moteur, wheels, volant, frein);
+	CarFast(int id, String name, String color, int speed,  Motor motor, String wheels[],  String volant, String frein) {
+		super(id, name, speed, color,  motor, wheels, volant, frein);
 	
 	}
 
