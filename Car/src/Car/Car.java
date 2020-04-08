@@ -106,23 +106,19 @@ public class Car{
         	 Frein = "frein";
         	 Volant = "volant";
 			 Retro = "retro";
-			
-			 String[] tab = {Frein, Volant, Retro, Wheels[0],Wheels[1],Wheels[2], Wheels[3] };
-			 Random r2 = new Random();
-			 String piecelost = tab[r2.nextInt(tab.length)];
-			
-			
 			 
 			 System.out.println("Votre voiture avance rapidement, attention vous risquer de perdre des pieces en routes!!!");
-			
-			
 			
 			 char reponse = 'O';
 			 char reponsetemps = 'O';
 			
 			 while (reponse == 'O') {
+				 String[] tab = {Frein, Volant, Retro, Wheels[0],Wheels[1],Wheels[2], Wheels[3] };
+				 Random r2 = new Random();
+				 String piecelost = tab[r2.nextInt(tab.length)];
+				
 				 System.out.println("Vous venez de perdre une piece : " + piecelost );
-				 System.out.println("Taper dans la console le nom de la piece a reparer en moins de 3 seconds pour reussi à la réparer");
+				 System.out.println("Taper dans la console le nom de la piece a reparer en moins de 6 seconds pour reussi à la réparer");
 				
 				 long timestart = System.currentTimeMillis();
 				 String piece = scan.next();
@@ -131,7 +127,7 @@ public class Car{
 				 float time = (timeend - timestart) / 1000F;
 				   
 				  System.out.println("Opération réparation de piece effectuée en: "+ Float.toString(time) + " secondes.");
-				 if(time <  3 ){
+				 if(time <  6 ){
 					 if(piece.equals(piecelost)) {
 						 System.out.println("Vous avez reussi à reparer la piece dans le Temps impartie, vous avez mis   " + time + "  seconde a reparer votre piece") ;
 						 System.out.println(ansi().eraseScreen().fg(GREEN).a("La piece est desormais reparer"));
@@ -142,18 +138,12 @@ public class Car{
 						 System.out.println("Piece toujour manquante...");
 						
 					 }
-					 reponse = ' ';
-					 while(reponse != 'O' && reponse != 'N' && !piece.equals(piecelost))
-					  {
-					   
-					    System.out.println(ansi().eraseScreen().fg(RED).a("Voulez-vous réessayer ? (O/N)"));
-					    reponse = '0';
-					   
-					  }
+					
+					
 				 }
 				 else {
 					 System.out.println("Vous n'avez pas reussi à reparer la piece dans le Temps impartie, vous avez mis " + time + " seconde a reparer votre piece");
-					  System.out.println(ansi().eraseScreen().fg(RED).a("Votre voiture "+ Name + " ne parvient pas a finir la course a cause de la piece manquante " + piecelost));
+					  System.out.println(ansi().eraseScreen().fg(RED).a("Votre voiture  ne parvient pas a finir la course a cause de la piece manquante " + piecelost));
 				 }
 				
 				
@@ -216,12 +206,12 @@ public class Car{
 				  if(boost == motdesordre) {
 						 
 						 System.out.println(ansi().eraseScreen().fg(GREEN).a("Boost active avec succes"));
-						 System.out.println(ansi().eraseScreen().fg(GREEN).a("La voiture a fini sont parcoure apres 50 km, fin du jeu"));
+						
 						 
 					 }
 					 else {
 						 System.out.println(ansi().eraseScreen().fg(RED).a("Ejecte d'activation du Boost"));
-						 System.out.println(ansi().eraseScreen().fg(RED).a("La voiture n'a fini sont parcoure, fin du jeu"));
+						
 					 } 
 			  }
 			  else {
