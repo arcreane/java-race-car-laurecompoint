@@ -27,8 +27,11 @@ public class Car{
 	String Volant;
 	String Frein;
 	String Retro;
+	float time;
 	
 	 String motdesordre;
+	private Object piece;
+	private Object piecelost;
 	Car() {
 		
 	}
@@ -108,17 +111,17 @@ public class Car{
 			 char reponsetemps = 'O';
 				Scanner sc = new Scanner(System.in);
 			
-			
+			do {
 				 String[] tab = {Frein, Volant, Retro, Wheels[0],Wheels[1],Wheels[2], Wheels[3] };
 				 Random r2 = new Random();
-				 String piecelost = tab[r2.nextInt(tab.length)];
+				 piecelost = tab[r2.nextInt(tab.length)];
 				 System.out.println("Vous venez de perdre une pièce : " + piecelost );
 				 System.out.println("Taper dans la console le nom de la pièce a reparé en moins de 6 secondes pour reussir à la réparer");
 				 long timestart = System.currentTimeMillis();
-				 String piece = scan.next();
+				 piece = scan.next();
 				 System.out.println(piece);
 				 long timeend = System.currentTimeMillis();
-				 float time = (timeend - timestart) / 1000F;
+				 time = (timeend - timestart) / 1000F;
 				   
 				  System.out.println("Opération réparation de piece effectuée en: "+ Float.toString(time) + " secondes.");
 				 if(time <  6 ){
@@ -144,7 +147,7 @@ public class Car{
 				
 				
 				 
-			 
+			}while(!(time <  6) || !(this.piece.equals(piecelost)));
 		
 			
 			 
