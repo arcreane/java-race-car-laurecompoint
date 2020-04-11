@@ -28,7 +28,7 @@ public class Car{
 	String Frein;
 	String Retro;
 	float time;
-	
+	float timeboost;
 	 String motdesordre;
 	private Object piece;
 	private Object piecelost;
@@ -95,7 +95,7 @@ public class Car{
 		 
 		
 		 while(Speed <= 60) {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed + "et n'a pas encore perdu de piece");
+			 System.out.println("Votre voiture à une vitesse de "  + Speed + "  et n'a pas encore perdu de piece");
 			 Speed++;
 		 }
 		 System.out.println();
@@ -165,12 +165,14 @@ public class Car{
 		 Speed = speedcar[r3.nextInt(speedcar.length)];
 		
 		 while(Speed <= 20) {
-			 System.out.println("Votre voiture à une vitesse de "  + Speed +  "et n'a pas encore le droit d'avoir un boost de vitesse" );
+			 System.out.println("Votre voiture à une vitesse de "  + Speed +  " et n'a pas encore le droit d'avoir un boost de vitesse" );
 			 Speed++;
 		 }
          if(Speed <= 30) {
         	 System.out.println("Votre voiture  à une vitesse de "  + Speed );
     		 System.out.println("Votre voiture   avance doucement, vous avez le droit à un boost de vitesse...");
+    		 
+    		 do {
     		 System.out.println("Pour que le boost s'active, entrer les lettres du mot dans le même ordre qui va apparaitre en moins de 3 secondes.");
     		
    	
@@ -192,12 +194,12 @@ public class Car{
 			 String boost = scan.next();
 			 System.out.println(boost);
 			 long timeend = System.currentTimeMillis();
-			 float time = (timeend - timestart) / 1000F;
+			 timeboost = (timeend - timestart) / 1000F;
 			   
-			  System.out.println("Opération réparation de piece effectuée en: "+ Float.toString(time) + " secondes.");
+			  System.out.println("Opération activation de boost effectuée en: "+ Float.toString(timeboost) + " secondes.");
 			
-			  if(time <  3 ){
-				  if(boost == motdesordre) {
+			  if(timeboost <  3 ){
+				  if(boost.equals(motdesordre)) {
 						 
 						 System.out.println(ansi().eraseScreen().fg(GREEN).a("Boost active avec succes"));
 						
@@ -214,7 +216,7 @@ public class Car{
 			
 			
 			
-			 
+    		 }while(!(timeboost <  3));
 			
 		 }
          else {
