@@ -169,7 +169,7 @@ public class Car{
 			 Speed++;
 		 }
          if(Speed <= 30) {
-        	 System.out.println("Votre voiture  à une vitesse de "  + Speed );
+        	 System.out.println("Votre voiture  à une vitesse de "  + Speed + " et a le droit d'avoir un boost de vitesse" );
     		 System.out.println("Votre voiture   avance doucement, vous avez le droit à un boost de vitesse...");
     		 
     		 do {
