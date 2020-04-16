@@ -128,7 +128,7 @@ public class Car{
 					 if(piece.equals(piecelost)) {
 						 System.out.println("Vous avez reparer la pièce dans le Temps impartie, vous avez mis   " + time + "  seconde a reparer votre piece") ;
 						 System.out.println("La pièce est désormais réparée");
-						
+						 
 					 }
 					 else {
 						
